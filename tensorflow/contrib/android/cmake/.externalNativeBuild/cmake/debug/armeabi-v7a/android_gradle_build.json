@@ -1,0 +1,129 @@
+
+{
+	"buildFiles" : 
+	[
+		"/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"/Users/vardanpetrosyan/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a --target clean"
+	],
+	"cppFileExtensions" : [ "cc" ],
+	"libraries" : 
+	{
+		"lib_proto-Debug-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "lib_proto",
+			"buildType" : "debug",
+			"output" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/lib/libprotobuf.a",
+			"toolchain" : "9455535397532635340"
+		},
+		"lib_tf-Debug-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "lib_tf",
+			"buildType" : "debug",
+			"output" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/lib/libtensorflow-core.a",
+			"toolchain" : "9455535397532635340"
+		},
+		"tensorflow_inference-Debug-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "tensorflow_inference",
+			"buildCommand" : "/Users/vardanpetrosyan/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a --target tensorflow_inference",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --sysroot=/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot  -Dtensorflow_inference_EXPORTS -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/proto -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/include -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/downloads/eigen -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow -I../../../../.. -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -DIS_SLIM_BUILD                      -std=c++11 -fno-rtti -fno-exceptions                      -O2 -Wno-narrowing                      -mfpu=neon -mfloat-abi=softfp -fPIE                      -DGOOGLE_PROTOBUF_NO_RTTI                      -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -O0  -fPIC    -c ",
+					"src" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/jni/run_stats_jni.cc",
+					"workingDirectory" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --sysroot=/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot  -Dtensorflow_inference_EXPORTS -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/proto -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/include -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/downloads/eigen -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow -I../../../../.. -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -DIS_SLIM_BUILD                      -std=c++11 -fno-rtti -fno-exceptions                      -O2 -Wno-narrowing                      -mfpu=neon -mfloat-abi=softfp -fPIE                      -DGOOGLE_PROTOBUF_NO_RTTI                      -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -O0  -fPIC    -c ",
+					"src" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/c/tf_status_helper.cc",
+					"workingDirectory" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --sysroot=/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot  -Dtensorflow_inference_EXPORTS -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/proto -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/include -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/downloads/eigen -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow -I../../../../.. -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -DIS_SLIM_BUILD                      -std=c++11 -fno-rtti -fno-exceptions                      -O2 -Wno-narrowing                      -mfpu=neon -mfloat-abi=softfp -fPIE                      -DGOOGLE_PROTOBUF_NO_RTTI                      -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -O0  -fPIC    -c ",
+					"src" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/c/checkpoint_reader.cc",
+					"workingDirectory" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --sysroot=/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot  -Dtensorflow_inference_EXPORTS -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/proto -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/include -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/downloads/eigen -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow -I../../../../.. -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -DIS_SLIM_BUILD                      -std=c++11 -fno-rtti -fno-exceptions                      -O2 -Wno-narrowing                      -mfpu=neon -mfloat-abi=softfp -fPIE                      -DGOOGLE_PROTOBUF_NO_RTTI                      -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -O0  -fPIC    -c ",
+					"src" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/c/test_op.cc",
+					"workingDirectory" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --sysroot=/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot  -Dtensorflow_inference_EXPORTS -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/proto -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/include -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/downloads/eigen -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow -I../../../../.. -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -DIS_SLIM_BUILD                      -std=c++11 -fno-rtti -fno-exceptions                      -O2 -Wno-narrowing                      -mfpu=neon -mfloat-abi=softfp -fPIE                      -DGOOGLE_PROTOBUF_NO_RTTI                      -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -O0  -fPIC    -c ",
+					"src" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/c/c_api.cc",
+					"workingDirectory" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --sysroot=/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot  -Dtensorflow_inference_EXPORTS -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/proto -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/include -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/downloads/eigen -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow -I../../../../.. -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -DIS_SLIM_BUILD                      -std=c++11 -fno-rtti -fno-exceptions                      -O2 -Wno-narrowing                      -mfpu=neon -mfloat-abi=softfp -fPIE                      -DGOOGLE_PROTOBUF_NO_RTTI                      -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -O0  -fPIC    -c ",
+					"src" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/java/src/main/native/exception_jni.cc",
+					"workingDirectory" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --sysroot=/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot  -Dtensorflow_inference_EXPORTS -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/proto -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/include -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/downloads/eigen -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow -I../../../../.. -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -DIS_SLIM_BUILD                      -std=c++11 -fno-rtti -fno-exceptions                      -O2 -Wno-narrowing                      -mfpu=neon -mfloat-abi=softfp -fPIE                      -DGOOGLE_PROTOBUF_NO_RTTI                      -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -O0  -fPIC    -c ",
+					"src" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/java/src/main/native/graph_jni.cc",
+					"workingDirectory" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --sysroot=/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot  -Dtensorflow_inference_EXPORTS -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/proto -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/include -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/downloads/eigen -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow -I../../../../.. -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -DIS_SLIM_BUILD                      -std=c++11 -fno-rtti -fno-exceptions                      -O2 -Wno-narrowing                      -mfpu=neon -mfloat-abi=softfp -fPIE                      -DGOOGLE_PROTOBUF_NO_RTTI                      -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -O0  -fPIC    -c ",
+					"src" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/java/src/main/native/operation_builder_jni.cc",
+					"workingDirectory" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --sysroot=/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot  -Dtensorflow_inference_EXPORTS -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/proto -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/include -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/downloads/eigen -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow -I../../../../.. -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -DIS_SLIM_BUILD                      -std=c++11 -fno-rtti -fno-exceptions                      -O2 -Wno-narrowing                      -mfpu=neon -mfloat-abi=softfp -fPIE                      -DGOOGLE_PROTOBUF_NO_RTTI                      -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -O0  -fPIC    -c ",
+					"src" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/java/src/main/native/operation_jni.cc",
+					"workingDirectory" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --sysroot=/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot  -Dtensorflow_inference_EXPORTS -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/proto -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/include -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/downloads/eigen -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow -I../../../../.. -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -DIS_SLIM_BUILD                      -std=c++11 -fno-rtti -fno-exceptions                      -O2 -Wno-narrowing                      -mfpu=neon -mfloat-abi=softfp -fPIE                      -DGOOGLE_PROTOBUF_NO_RTTI                      -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -O0  -fPIC    -c ",
+					"src" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/java/src/main/native/saved_model_bundle_jni.cc",
+					"workingDirectory" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --sysroot=/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot  -Dtensorflow_inference_EXPORTS -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/proto -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/include -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/downloads/eigen -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow -I../../../../.. -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -DIS_SLIM_BUILD                      -std=c++11 -fno-rtti -fno-exceptions                      -O2 -Wno-narrowing                      -mfpu=neon -mfloat-abi=softfp -fPIE                      -DGOOGLE_PROTOBUF_NO_RTTI                      -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -O0  -fPIC    -c ",
+					"src" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/java/src/main/native/session_jni.cc",
+					"workingDirectory" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --sysroot=/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot  -Dtensorflow_inference_EXPORTS -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/proto -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/include -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/downloads/eigen -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow -I../../../../.. -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -DIS_SLIM_BUILD                      -std=c++11 -fno-rtti -fno-exceptions                      -O2 -Wno-narrowing                      -mfpu=neon -mfloat-abi=softfp -fPIE                      -DGOOGLE_PROTOBUF_NO_RTTI                      -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -O0  -fPIC    -c ",
+					"src" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/java/src/main/native/tensor_jni.cc",
+					"workingDirectory" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --sysroot=/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot  -Dtensorflow_inference_EXPORTS -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/proto -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/gen/protobuf/include -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/makefile/downloads/eigen -I/Users/vardanpetrosyan/repos/my/tf-git/tensorflow -I../../../../.. -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -DIS_SLIM_BUILD                      -std=c++11 -fno-rtti -fno-exceptions                      -O2 -Wno-narrowing                      -mfpu=neon -mfloat-abi=softfp -fPIE                      -DGOOGLE_PROTOBUF_NO_RTTI                      -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -O0  -fPIC    -c ",
+					"src" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/java/src/main/native/tensorflow_jni.cc",
+					"workingDirectory" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				}
+			],
+			"output" : "/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/build/intermediates/cmake/debug/obj/armeabi-v7a/libtensorflow_inference.so",
+			"toolchain" : "9455535397532635340"
+		}
+	},
+	"toolchains" : 
+	{
+		"9455535397532635340" : 
+		{
+			"cCompilerExecutable" : "/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-gcc",
+			"cppCompilerExecutable" : "/Users/vardanpetrosyan/Library/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-g++"
+		}
+	}
+}

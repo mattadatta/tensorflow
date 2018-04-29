@@ -3,22 +3,26 @@ apply plugin: 'com.android.library'
 // TensorFlow repo root dir on local machine
 def TF_SRC_DIR = projectDir.toString() + "/../../../.."
 
+def bazel_bin = "/usr/bin/bazel"
+
+def bazel_output_file = getProjectDir().toString() + '/../../../../bazel-bin/tensorflow/contrib/android/tensorflow/libtensorflow_inference.so'
+def tf_libs_dir = getProjectDir().toString() + '/../distribution/'
+
 android {
-    compileSdkVersion 24
-    // Check local build_tools_version as this is liable to change within Android Studio.
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
 
     // for debugging native code purpose
-    publishNonDefault true
+    publishNonDefault false
 
     defaultConfig {
         archivesBaseName = "Tensorflow-Android-Inference"
         minSdkVersion 21
-        targetSdkVersion 23
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         ndk {
-            abiFilters  'armeabi-v7a'
+            abiFilters  'armeabi-v7a', 'arm64-v8a'
         }
         externalNativeBuild {
             cmake {
@@ -34,14 +38,11 @@ android {
                 srcDir "${TF_SRC_DIR}/tensorflow/java/src/main/java"
                 exclude '**/examples/**'
             }
+
+            jniLibs.srcDirs = ['../distribution/']
         }
     }
 
-    externalNativeBuild {
-        cmake {
-            path 'CMakeLists.txt'
-        }
-    }
     buildTypes {
         release {
             minifyEnabled false
@@ -62,10 +63,15 @@ android {
 //       with multiple processes.
 import org.apache.tools.ant.taskdefs.condition.Os
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties')
-                .newDataInputStream())
-def ndkDir = properties.getProperty('ndk.dir')
+def propFile = project.rootProject.file('local.properties')
+def ndkDir = ""
+
+if(propFile.exists()) {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties')
+            .newDataInputStream())
+    ndkDir = properties.getProperty('ndk.dir')
+}
 if (ndkDir == null || ndkDir == "") {
     ndkDir = System.getenv('ANDROID_NDK_HOME')
 }
@@ -75,28 +81,73 @@ if(! Os.isFamily(Os.FAMILY_WINDOWS)) {
     // (or copy the built) libs/headers to the
     //    ${TENSORFLOW_ROOT_DIR}/tensorflow/contrib/makefile/gen
     // refer to CMakeLists.txt about lib and header directories for details
-    task buildTensorflow(type: Exec) {
+    task buildTensorFlowArm64WithBazel(type: Exec) {
         group 'buildTensorflowLib'
         workingDir getProjectDir().toString() + '/../../../../'
-        environment PATH: '/opt/local/bin:/opt/local/sbin:' +
-                          System.getenv('PATH')
-        environment NDK_ROOT: ndkDir
-        commandLine 'tensorflow/contrib/makefile/build_all_android.sh'
+        environment PATH: '/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin' +
+                System.getenv('PATH')
+        commandLine bazel_bin, 'build', '-c', 'opt',  \
+            '//tensorflow/contrib/android:libtensorflow_inference.so',  \
+            '--crosstool_top=//external:android/crosstool',  \
+            '--cpu=arm64-v8a',
+                '--android_cpu=arm64-v8a',  \
+            '--host_crosstool_top=@bazel_tools//tools/cpp:toolchain', \
+            '--verbose_failures'
     }
 
-    tasks.whenTaskAdded { task ->
+    task buildTensorFlowArmV7WithBazel(type: Exec) {
         group 'buildTensorflowLib'
-        if (task.name.toLowerCase().contains('sources')) {
-            def tensorflowTarget = new File(getProjectDir().toString() +
-                    '/../../makefile/gen/lib/libtensorflow-core.a')
-            if (!tensorflowTarget.exists()) {
-                // Note:
-                //    just uncomment this line to use it:
-                //    it can take long time to build by default
-                //    it is disabled to avoid false first impression
-                task.dependsOn buildTensorflow
-            }
-        }
+        workingDir getProjectDir().toString() + '/../../../../'
+        environment PATH: '/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/bin:' +
+                System.getenv('PATH')
+        commandLine bazel_bin, 'build', '-c', 'opt',  \
+            '//tensorflow/contrib/android:libtensorflow_inference.so',  \
+            '--crosstool_top=//external:android/crosstool',  \
+            '--cpu=armeabi-v7a',
+                '--android_cpu=armeabi-v7a',  \
+            '--host_crosstool_top=@bazel_tools//tools/cpp:toolchain', \
+            '--verbose_failures'
+    }
+
+    task buildTensorFlowX86WithBazel(type: Exec) {
+        group 'buildTensorflowLib'
+        workingDir getProjectDir().toString() + '/../../../../'
+        environment PATH: '/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/bin:' +
+                System.getenv('PATH')
+        commandLine bazel_bin, 'build', '-c', 'opt',  \
+            '//tensorflow/contrib/android:libtensorflow_inference.so',  \
+            '--crosstool_top=//external:android/crosstool',  \
+            '--cpu=x86',  \
+            '--host_crosstool_top=@bazel_tools//tools/cpp:toolchain'
+    }
+
+    task cleanBazel(type: Exec) {
+        group 'buildTensorflowLib'
+        workingDir getProjectDir().toString() + '/../../../../'
+        environment PATH: '/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/bin:' +
+                System.getenv('PATH')
+        commandLine bazel_bin, "clean"
+    }
+
+    task copyARMNativeLibs(type: Copy) {
+        group 'buildTensorflowLib'
+        from bazel_output_file
+        into tf_libs_dir + 'armeabi-v7a'
+        duplicatesStrategy = 'include'
+    }
+
+    task copyX86NativeLibs(type: Copy) {
+        group 'buildTensorflowLib'
+        from bazel_output_file
+        into tf_libs_dir + 'x86'
+        duplicatesStrategy = 'include'
+    }
+
+    task copyARM64NativeLibs(type: Copy) {
+        group 'buildTensorflowLib'
+        from bazel_output_file
+        into tf_libs_dir + 'arm64-v8a'
+        duplicatesStrategy = 'include'
     }
 }
 

@@ -139,6 +139,8 @@ class GatherOp : public OpKernel {
 
 // Registration of the CPU implementations.
 TF_CALL_ALL_TYPES(REGISTER_GATHER_CPU);
+REGISTER_GATHER_CPU(::tensorflow::int64);
+REGISTER_GATHER_CPU(double);
 TF_CALL_QUANTIZED_TYPES(REGISTER_GATHER_CPU);
 TF_CALL_quint16(REGISTER_GATHER_CPU);
 TF_CALL_qint16(REGISTER_GATHER_CPU);

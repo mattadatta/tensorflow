@@ -231,6 +231,7 @@ Status ConjugateTransposeCpuOp::DoTranspose(OpKernelContext* ctx,
                           MklConjugateTransposeCpuOp);
 TF_CALL_ALL_TYPES(REGISTER);
 REGISTER(bfloat16);
+REGISTER(::tensorflow::int64);
 #undef REGISTER
 
 #else  // INTEL_MKL
@@ -248,6 +249,7 @@ REGISTER(bfloat16);
                           ConjugateTransposeCpuOp);
 TF_CALL_ALL_TYPES(REGISTER)
 REGISTER(bfloat16);
+REGISTER(::tensorflow::int64);
 #undef REGISTER
 #endif  // INTEL_MKL
 

@@ -17,6 +17,7 @@ limitations under the License.
 
 namespace tensorflow {
 REGISTER3(UnaryOp, CPU, "Ceil", functor::ceil, float, Eigen::half, double);
+//REGISTER(UnaryOp, CPU, "Ceil", functor::ceil, double);
 
 #if GOOGLE_CUDA
 REGISTER3(UnaryOp, GPU, "Ceil", functor::ceil, float, Eigen::half, double);

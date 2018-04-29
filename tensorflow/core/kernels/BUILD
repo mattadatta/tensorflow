@@ -4394,6 +4394,8 @@ filegroup(
         "queue_base.h",
         "queue_op.h",
         "typed_queue.h",
+        "resize_bicubic_op.cc",
+        "image_resizer_state.h"
     ],
 )
 
@@ -4439,7 +4441,7 @@ filegroup(
         "cwise_ops.h",
         "cwise_ops_common.cc",
         "cwise_ops_common.h",
-        "cwise_ops_gradients.h",
+        "cwise_op_ceil.cc",
         "dense_update_functor.cc",
         "dense_update_functor.h",
         "dense_update_ops.cc",
@@ -4529,7 +4531,6 @@ filegroup(
     srcs = [
         ":android_extended_ops_group1",
         ":android_extended_ops_group2",
-        ":android_quantized_ops",
     ],
     visibility = ["//visibility:public"],
 )

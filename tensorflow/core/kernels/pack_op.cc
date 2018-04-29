@@ -140,6 +140,8 @@ class PackOp : public OpKernel {
 TF_CALL_ALL_TYPES(REGISTER_PACK);
 TF_CALL_QUANTIZED_TYPES(REGISTER_PACK);
 TF_CALL_bfloat16(REGISTER_PACK);
+//TF_SPECIAL_CALL_int64(REGISTER_PACK);
+REGISTER_PACK(::tensorflow::int64);
 
 #if defined(IS_MOBILE_PLATFORM) && !defined(SUPPORT_SELECTIVE_REGISTRATION)
 // Primarily used for SavedModel support on mobile.

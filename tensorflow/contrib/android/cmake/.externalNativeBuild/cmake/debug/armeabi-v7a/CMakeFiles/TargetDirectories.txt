@@ -1,0 +1,3 @@
+/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/vardanpetrosyan/repos/my/tf-git/tensorflow/tensorflow/contrib/android/cmake/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/tensorflow_inference.dir
