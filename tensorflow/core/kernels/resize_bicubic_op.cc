@@ -530,8 +530,6 @@ class ResizeBicubicOpGrad : public OpKernel {
 
 TF_CALL_REAL_NUMBER_TYPES(REGISTER_KERNEL);
 
-REGISTER_KERNEL(uint8);
-
 #undef REGISTER_KERNEL
 
 #define REGISTER_GRAD_KERNEL(T)                                            \

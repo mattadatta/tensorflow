@@ -167,7 +167,6 @@ using ConcatV2Op = ConcatBaseOp<Device, T, NAME_IS_AXIS>;
                           ConcatV2Op<CPUDevice, type>)
 
 TF_CALL_POD_STRING_TYPES(REGISTER_CONCAT);
-//REGISTER_CONCAT(::tensorflow::int64);
 REGISTER_CONCAT(quint8);
 REGISTER_CONCAT(qint8);
 REGISTER_CONCAT(quint16);

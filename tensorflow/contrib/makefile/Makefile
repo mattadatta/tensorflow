@@ -46,9 +46,9 @@ ifdef HEXAGON_LIBS
 	endif
 endif # HEXAGON_LIBS
 
-# If ANDROID_TYPES is not set assume __ANDROID_TYPES_SLIM__
+# If ANDROID_TYPES is not set assume __ANDROID_TYPES_FULL__
 ifeq ($(ANDROID_TYPES),)
-	ANDROID_TYPES := -D__ANDROID_TYPES_SLIM__
+	ANDROID_TYPES := -D__ANDROID_TYPES_FULL__
 endif
 
 # Try to figure out the host system
@@ -256,7 +256,7 @@ ifeq ($(TARGET),ANDROID)
 	else
 		ANDROID_HOST_OS_ARCH := $(ANDROID_HOST_OS_ARCH)-$(HOST_ARCH)
 	endif
-    
+
 	ifndef ANDROID_ARCH
 		ANDROID_ARCH := armeabi-v7a
 	endif
@@ -303,7 +303,7 @@ ifeq ($(TARGET),ANDROID)
 		BIN_PREFIX := x86-64-linux-android
 		MARCH_OPTION :=
 	endif
-    
+
 	ifndef NDK_ROOT
     $(error "NDK_ROOT is not defined.")
 	endif
@@ -374,7 +374,7 @@ $(MARCH_OPTION) \
 	ifdef ENABLE_EXPERIMENTAL_HEXNN_OPS
 		CXXFLAGS += -DENABLE_EXPERIMENTAL_HEXNN_OPS
 	endif
-	
+
 	OBJDIR := $(OBJDIR)android_$(ANDROID_ARCH)/
 	LIBDIR := $(LIBDIR)android_$(ANDROID_ARCH)/
 	BINDIR := $(BINDIR)android_$(ANDROID_ARCH)/

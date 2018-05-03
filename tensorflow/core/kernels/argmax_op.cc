@@ -145,7 +145,6 @@ class ArgMinOp
                           ArgMinOp<CPUDevice, type, int32>);
 
 TF_CALL_REAL_NUMBER_TYPES(REGISTER_ARGMAX);
-REGISTER_ARGMAX(::tensorflow::int64);
 
 #if GOOGLE_CUDA
 

@@ -268,6 +268,7 @@ tensorflow/core/ops/math_ops.cc
 tensorflow/core/ops/math_grad.cc
 tensorflow/core/ops/logging_ops.cc
 tensorflow/core/ops/linalg_ops.cc
+tensorflow/core/ops/lookup_ops.cc
 tensorflow/core/ops/io_ops.cc
 tensorflow/core/ops/image_ops.cc
 tensorflow/core/ops/functional_ops.cc

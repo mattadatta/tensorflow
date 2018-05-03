@@ -3,26 +3,27 @@ apply plugin: 'com.android.library'
 // TensorFlow repo root dir on local machine
 def TF_SRC_DIR = projectDir.toString() + "/../../../.."
 
-def bazel_bin = "/usr/bin/bazel"
+def bazel_bin = "/usr/local/bin/bazel"
 
 def bazel_output_file = getProjectDir().toString() + '/../../../../bazel-bin/tensorflow/contrib/android/tensorflow/libtensorflow_inference.so'
 def tf_libs_dir = getProjectDir().toString() + '/../distribution/'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 24
+    // Check local build_tools_version as this is liable to change within Android Studio.
+    buildToolsVersion '25.0.2'
 
     // for debugging native code purpose
-    publishNonDefault false
+    publishNonDefault true
 
     defaultConfig {
         archivesBaseName = "Tensorflow-Android-Inference"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         ndk {
-            abiFilters  'armeabi-v7a', 'arm64-v8a'
+            abiFilters  'armeabi-v7a'
         }
         externalNativeBuild {
             cmake {
@@ -43,6 +44,11 @@ android {
         }
     }
 
+//    externalNativeBuild {
+//        cmake {
+//            path 'CMakeLists.txt'
+//        }
+//    }
     buildTypes {
         release {
             minifyEnabled false
@@ -63,15 +69,10 @@ android {
 //       with multiple processes.
 import org.apache.tools.ant.taskdefs.condition.Os
 
-def propFile = project.rootProject.file('local.properties')
-def ndkDir = ""
-
-if(propFile.exists()) {
-    Properties properties = new Properties()
-    properties.load(project.rootProject.file('local.properties')
-            .newDataInputStream())
-    ndkDir = properties.getProperty('ndk.dir')
-}
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties')
+                .newDataInputStream())
+def ndkDir = properties.getProperty('ndk.dir')
 if (ndkDir == null || ndkDir == "") {
     ndkDir = System.getenv('ANDROID_NDK_HOME')
 }
@@ -84,15 +85,14 @@ if(! Os.isFamily(Os.FAMILY_WINDOWS)) {
     task buildTensorFlowArm64WithBazel(type: Exec) {
         group 'buildTensorflowLib'
         workingDir getProjectDir().toString() + '/../../../../'
-        environment PATH: '/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin' +
+        environment PATH: '/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/bin:' +
                 System.getenv('PATH')
         commandLine bazel_bin, 'build', '-c', 'opt',  \
             '//tensorflow/contrib/android:libtensorflow_inference.so',  \
             '--crosstool_top=//external:android/crosstool',  \
             '--cpu=arm64-v8a',
                 '--android_cpu=arm64-v8a',  \
-            '--host_crosstool_top=@bazel_tools//tools/cpp:toolchain', \
-            '--verbose_failures'
+            '--host_crosstool_top=@bazel_tools//tools/cpp:toolchain'
     }
 
     task buildTensorFlowArmV7WithBazel(type: Exec) {
@@ -105,8 +105,7 @@ if(! Os.isFamily(Os.FAMILY_WINDOWS)) {
             '--crosstool_top=//external:android/crosstool',  \
             '--cpu=armeabi-v7a',
                 '--android_cpu=armeabi-v7a',  \
-            '--host_crosstool_top=@bazel_tools//tools/cpp:toolchain', \
-            '--verbose_failures'
+            '--host_crosstool_top=@bazel_tools//tools/cpp:toolchain'
     }
 
     task buildTensorFlowX86WithBazel(type: Exec) {

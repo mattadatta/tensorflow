@@ -429,9 +429,6 @@ class TensorArrayWriteOp : public OpKernel {
       TensorArrayWriteOp<CPUDevice, type>);
 
 TF_CALL_ALL_TYPES(REGISTER_WRITE);
-REGISTER_WRITE(string);
-REGISTER_WRITE(int64);
-REGISTER_WRITE(double);
 
 #undef REGISTER_WRITE
 
@@ -520,9 +517,7 @@ class TensorArrayReadOp : public OpKernel {
                               .TypeConstraint<type>("dtype"),  \
                           TensorArrayReadOp<CPUDevice, type>);
 
-TF_CALL_ALL_TYPES(REGISTER_READ);
-REGISTER_READ(string);
-REGISTER_READ(int64);
+TF_CALL_ALL_TYPES(REGISTER_READ)
 
 #undef REGISTER_READ
 
@@ -711,9 +706,6 @@ class TensorArrayPackOrGatherOp : public OpKernel {
       TensorArrayPackOrGatherOp<CPUDevice, type, false /* LEGACY_PACK */>);
 
 TF_CALL_POD_STRING_TYPES(REGISTER_GATHER_AND_PACK);
-REGISTER_GATHER_AND_PACK(string);
-REGISTER_GATHER_AND_PACK(int64);
-REGISTER_GATHER_AND_PACK(double);
 REGISTER_GATHER_AND_PACK(quint8);
 REGISTER_GATHER_AND_PACK(qint8);
 REGISTER_GATHER_AND_PACK(qint32);
@@ -1134,14 +1126,6 @@ class TensorArrayUnpackOrScatterOp : public OpKernel {
   }
 };
 
-#define REGISTER_SCATTER_SPECIAL(type)                         \
-        REGISTER_KERNEL_BUILDER(                                                     \
-                Name("TensorArrayScatterV3")                                             \
-                .Device(DEVICE_CPU)                                                  \
-                .TypeConstraint<type>("T"),                                          \
-            TensorArrayUnpackOrScatterOp<CPUDevice, type,                            \
-                                         false /* LEGACY_UNPACK */>);
-
 #define REGISTER_SCATTER_AND_UNPACK(type)                                      \
   REGISTER_KERNEL_BUILDER(                                                     \
       Name("TensorArrayUnpack").Device(DEVICE_CPU).TypeConstraint<type>("T"),  \
@@ -1165,11 +1149,7 @@ class TensorArrayUnpackOrScatterOp : public OpKernel {
                                    false /* LEGACY_UNPACK */>);
 
 TF_CALL_ALL_TYPES(REGISTER_SCATTER_AND_UNPACK);
-REGISTER_SCATTER_AND_UNPACK(string);
-REGISTER_SCATTER_AND_UNPACK(::tensorflow::int64);
-//TF_SPECIAL_CALL_string(REGISTER_SCATTER_AND_UNPACK);
 #undef REGISTER_SCATTER_AND_UNPACK
-#undef REGISTER_SCATTER_SPECIAL
 
 #if GOOGLE_CUDA
 
@@ -1350,7 +1330,6 @@ class TensorArraySplitOp : public OpKernel {
       TensorArraySplitOp<CPUDevice, type>);
 
 TF_CALL_ALL_TYPES(REGISTER_SPLIT);
-REGISTER_SPLIT(string);
 #undef REGISTER_SPLIT
 
 #if GOOGLE_CUDA

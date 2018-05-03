@@ -66,13 +66,7 @@ void SwitchOp::Compute(OpKernelContext* context) {
                               .HostMemory("pred")         \
                               .TypeConstraint<type>("T"), \
                           SwitchOp)
-// TF_CALL_bool(REGISTER_CPU_SWITCH)
-TF_SPECIAL_CALL_string(REGISTER_CPU_SWITCH);
-REGISTER_CPU_SWITCH(::tensorflow::ResourceHandle);
-REGISTER_CPU_SWITCH(int64);
-REGISTER_CPU_SWITCH(uint8);
 
-REGISTER_CPU_SWITCH(double);
 TF_CALL_ALL_TYPES(REGISTER_CPU_SWITCH);
 TF_CALL_ALL_TYPES(REGISTER_CPU_REF_SWITCH);
 TF_CALL_QUANTIZED_TYPES(REGISTER_CPU_SWITCH);

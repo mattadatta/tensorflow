@@ -137,7 +137,6 @@ struct GatherNdSlice<CPUDevice, T, Index, IXDIM> {
   REGISTER_GATHER_ND_FULL(type, int64)
 
 TF_CALL_ALL_TYPES(REGISTER_GATHER_ND_CPU);
-REGISTER_GATHER_ND_CPU(int64);
 
 }  // namespace functor
 
